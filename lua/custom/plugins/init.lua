@@ -3,6 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 
+vim.g.have_nerd_font = true
 vim.opt.relativenumber = true
 vim.keymap.set('n', '<leader>fs', vim.cmd.w, { desc = '[F]ile [S]ave' })
 
@@ -69,6 +70,24 @@ return {
       vim.g.copilot_assume_mapped = true
     end,
   },
+
+  {
+    'kylechui/nvim-surround',
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
+
+  -- {
+  --   'supermaven-inc/supermaven-nvim',
+  --   config = function()
+  --     require('supermaven-nvim').setup {}
+  --   end,
+  -- },
 
   -- {
   --   'jackMort/ChatGPT.nvim',
